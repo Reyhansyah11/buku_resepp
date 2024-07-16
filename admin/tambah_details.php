@@ -3,8 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Resep</title>
+    <title>ALS || FOOD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../assets/Group 24.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btnn-primary {
+            background: linear-gradient(135deg, #E61717, #F87E08);
+            border: none;
+            padding: 10px 20px;
+        }
+
+        .btnn-primary:hover {
+            background: linear-gradient(135deg, #F87E08, #E61717);
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        input[type="file"] {
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #f1f3f5;
+        }
+
+        select {
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -60,23 +102,10 @@
                         <label for="resep">Resep:</label>
                         <textarea name="resep" id="resep" class="form-control" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Tambah Resep</button>
+                    <button type="submit" class="btn btnn-primary text-light">Tambah Resep</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
 </html>
-
-<script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-        var namaMakanan = document.querySelector('input[name="nama_makanan"]').value;
-        if (namaMakanan.trim() === '') {
-            alert('Nama makanan tidak boleh kosong');
-            event.preventDefault();
-        }
-    });
-</script>
-
-
-    

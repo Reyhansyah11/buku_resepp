@@ -4,7 +4,7 @@
 
     session_destroy();
 
-    header("Location: ../js/index.php");
+    header("Location: ../index.php");
     exit;
 
 ?>

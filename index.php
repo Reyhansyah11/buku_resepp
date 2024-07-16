@@ -3,47 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALS || FOOD</title>
+    <title>ALS || Food</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../assets/Group 24.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="./assets/Group 24.png" type="image/x-icon">
     <style>
-
-.btnn-primary {
+        .w {
+            text-shadow: 2px 4px 6px black;
+        }
+        .light-70 {
+            color: #ffffff;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            transition: backdrop-filter 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            display: inline-block;
+            padding: 5px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #E61717, #F87E08);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btnn-primary { 
             background: linear-gradient(135deg, #E61717, #F87E08);
             color: white;
             border: none;
         }
-
         .btnn-primary:hover {
             background: linear-gradient(135deg, #F87E08, #E61717);
         }
-
         .btnn-primary:not(.disabled):not(:disabled) {
             color: white;
         }
-         .card {
+        .black {
+            color: #000000;
+            font-weight: 600;
+        } 
+        .bg-blue-opacity {
+            background-color: rgba(0, 123, 255, 0.8);
+        }
+        .navbar {
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .navbar-brand img {
+            width: 40px;
+        }
+        .hero {
+            background-image: url('./assets/2149141362.jpg');
+            background-size: cover;
+            height: 340px;
+            background-position: center;
+            color: #ffffff;
+            padding: 100px 0;
+            margin-top: 50px;
+        }
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .card {
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             margin-top: 50px;
         }
-
         .card:hover {
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-
         .card-img-top {
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             height: 250px;
             object-fit: cover;
         }
-
         .card-body {
             padding: 20px;
         }
-
         .card-title {
             font-size: 1.5rem;
             margin-bottom: 10px;
@@ -51,100 +90,134 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .card-title:hover {
             color: #F87E08; /* Ubah warna teks saat dihover */
         }
-
         .card-text {
             margin-bottom: 15px;
             color: #666;
         }
-
         .list-group-item {
             border-color: transparent;
             font-size: 0.9rem;
             color: #888;
         }
-
         .btn {
             border-radius: 10px;
             font-size: 0.9rem;
             padding: 8px 20px;
         }
-
         .modal-content {
             border-radius: 20px;
         }
-
         .modal-header {
             border-bottom: none;
         }
-
         .modal-footer {
             border-top: none;
         }
-
         .read-more-content {
             display: none;
         }
-
         .read-more-toggle::after {
             content: "Read More";
             color: #007bff;
             cursor: pointer;
         }
-
         .read-more-toggle.active::after {
             content: "Read Less";
         }
-
         .search-box {
-            max-width: 400px;
+            max-width: 600px;
             margin: 50px auto;
         }
-
-        .search-box .input-group-text {
+        .input-group-text {
             background: transparent;
         }
-
+        .dropdown{
+            background-color: transp;
+        }
+        .dropdown-toggle::after {
+            margin-left: 5px;
+        }
         .pagination .page-link {
             color: #E61717;
             border: none;
             background: transparent;
         }
-
         .pagination .page-link:hover {
             color: #F87E08;
         }
-
         .pagination .page-item.active .page-link {
             background: linear-gradient(135deg, #F87E08, #E61717);
             color: white;
             border: none;
         }
-
         .pagination .page-item.disabled .page-link {
             background: #e9ecef;
             color: #6c757d;
-            border:none;
+            border: none;
+        }
+        .btn-transparent{
+            margin-right: 10px;
         }
         .pilih-box {
-    max-width: 250px;
+    max-width: 600px;
     margin: -30px auto 0; /* Ubah margin-top menjadi 20px */
 }
+        
 
-.gradient-text {
-            background: linear-gradient(135deg, #E61717, #F87E08);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
 
     </style>
 </head>
-
 <body>
-   <!-- Search Box -->
+
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-light bg-blue-opacity fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/Group 24.png" alt="">
+        </a>
+
+        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+            <li class="dropdown order-1">
+                <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn dropdown-toggle gradient-text">Login <span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right mt-1">
+                    <li class="p-3">
+                        <form class="form" role="form" action="./proses/logika_login.php" method="POST">
+                            <div class="form-group">
+                                <input id="nameInput user_name" name="user_name" placeholder="user_name" class="form-control form-control-sm user_name" type="text" required="">
+                            </div>
+                            <div class="form-group">
+                                <input id="passwordInput password" name="password" placeholder="Password" class="form-control form-control-sm password" type="password" required="">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btnn-primary btn-block text-light">Login</button>
+                            </div>
+                            <div class="form-group text-xs-center">
+                                <small><a href="./proses/register.php">don't have account?</a></small>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 hero-content black">
+                <h1 class="text-white "> <span class="w"> Welcome to </span><span class="gradient-text"> ALSFOOD </span></h1>
+                <p class="light-70 black">Discover delicious recipes from around the world.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Search Box -->
 <div class="search-box">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
         <div class="input-group rounded">
@@ -185,7 +258,7 @@
     <h2 class="text-center mb-4 gradient-text" >Recipe List</h2>
     <div class="row">
     <?php
-        include "../db/koneksi.php";
+        include "./db/koneksi.php";
 
         $limit = 6;
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -225,7 +298,7 @@ if (!empty($whereClause)) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<div class='col-md-4 mb-4'>
                         <div class='card'>
-                            <img src='../uploads/{$row['foto']}' class='card-img-top' alt='{$row['nama_makanan']}'>
+                            <img src='./uploads/{$row['foto']}' class='card-img-top' alt='{$row['nama_makanan']}'>
                             <div class='card-body'>
                                 <h5 class='card-title'>
                                     <a href='#' class='text-decoration-none'>{$row['nama_makanan']}</a>
@@ -251,7 +324,7 @@ if (!empty($whereClause)) {
                                     </button>
                                 </div>
                                 <div class='modal-body'>
-                                    <img src='../uploads/{$row['foto']}' class='card-img-top mb-3' alt='Foto Makanan'>
+                                    <img src='./uploads/{$row['foto']}' class='card-img-top mb-3' alt='Foto Makanan'>
                                     <p><strong>Deskripsi:</strong> {$row['deskripsi']}</p>
                                     <ul class='list-group list-group-flush'>
                                         <li class='list-group-item'><strong>Kategori:</strong> {$row['nama_kategori']}</li>
@@ -318,8 +391,10 @@ if (!empty($whereClause)) {
     </div>
 </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

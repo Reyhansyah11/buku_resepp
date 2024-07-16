@@ -18,7 +18,7 @@ if ($result->num_rows == 1) {
 } else {
     echo "<script>
             alert('Username atau Password salah!');
-            window.location.href='../js/index.php';
+            window.location.href='../index.php';
         </script>";
     exit();
 }
